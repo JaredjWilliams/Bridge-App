@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PointscreenComponent } from './pointscreen/pointscreen.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BidscreenComponent } from './bidscreen/bidscreen.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FooterComponent,
     PointscreenComponent,
     DashboardComponent,
+    BidscreenComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
