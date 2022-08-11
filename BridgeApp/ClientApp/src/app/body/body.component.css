@@ -1,0 +1,26 @@
+div {
+    display: grid;
+    grid-template-areas:
+        "one c m"
+        "two c m"
+        "three c m"
+        "four c m"
+        "five c m";
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 25% 50% 25%;
+}
+.subtextOne {
+    grid-column-start: c;
+    grid-row-start: two;
+}
+.subtextTwo {
+    grid-column-start: c;
+    grid-row-start: three;
+}
+.subtextThree {
+    grid-column-start: c;
+    grid-row-start: four;
+}
+h2, h3 {
+    text-align: center;
+}
