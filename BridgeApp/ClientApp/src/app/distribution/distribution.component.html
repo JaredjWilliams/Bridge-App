@@ -1,0 +1,12 @@
+<div class="gridContainer">
+    <h2>Enter the number of cards you have in each suit</h2>
+        <ng-container *ngFor="let distribution of distributions">
+           <p># of   <img src="{{distribution.suit}}" alt=""></p>
+           <input type="number" value="{{distribution.suitCount}}" min="0" max="13">
+           <button (click)="distribution.incrementSuitCount()">+</button>
+           <button (click)="distribution.decrementSuitCount()">-</button>
+        </ng-container>
+<button class="submitButton"><a routerLink="/points">Submit</a></button>
+</div>
+
+

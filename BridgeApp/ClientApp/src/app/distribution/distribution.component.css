@@ -1,0 +1,35 @@
+.gridContainer {
+    display: grid;
+    grid-template-areas: 
+        'one c ca cb cc m'
+        'two c ca cb cc m'
+        'three c ca cb cc m'
+        'four c ca cb cc m'
+        'five c ca cb cc m'
+        'six c ca cb cc m';
+        grid-template-columns: 5% 1fr 1fr 30px 30px 5%;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        text-align: center;
+}
+h2 {
+    grid-column-start: c;
+    grid-column-end: cb;
+
+}
+img {
+    max-width: 15%;
+}
+p {
+    grid-column-start: c;
+    grid-column-end: c;
+    grid-row-start: two, three, four;
+    font-size: 25px;
+    padding-top: 10px;
+}
+input {
+    text-align: center;
+}
+.submitButton {
+    grid-column-start: ca;
+    font-size: 30px;
+}

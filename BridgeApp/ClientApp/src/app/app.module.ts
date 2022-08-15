@@ -16,6 +16,8 @@ import { PointscreenComponent } from './pointscreen/pointscreen.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BidscreenComponent } from './bidscreen/bidscreen.component';
+import { PartnerResponseComponent } from './partner-response/partner-response.component';
+import { DistributionComponent } from './distribution/distribution.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { BidscreenComponent } from './bidscreen/bidscreen.component';
     PointscreenComponent,
     DashboardComponent,
     BidscreenComponent,
+    PartnerResponseComponent,
+    DistributionComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

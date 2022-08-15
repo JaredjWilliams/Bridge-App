@@ -1,0 +1,31 @@
+.mainContainer {
+    display:grid;
+    grid-template-areas: 
+        "one c c2 m"
+        "two c c2 m";
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 2% 48% 48% 2%;
+}
+.subContainer {
+    grid-column-start: c;
+    grid-row-start: one;
+    word-wrap: break-word;
+}
+.subContainer2 {
+    grid-column-start: c2;
+    grid-row-start: one;
+}
+.subContainer3 {
+    grid-column-start: c;
+    grid-row-start: two;
+}
+.subContainer4 {
+    grid-column-start: c2;
+    grid-row-start: two;
+}
+img {
+    max-width: 15%;
+}
+h1 {
+    font-size: 50px;
+}

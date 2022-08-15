@@ -1,36 +1,20 @@
-.containerOne {
+.cardContainer {
     display: grid;
     grid-template-areas: 
-        "one c c2 m"
-        "two c c2 m"
-        "three c c2 m"
-        "four c c2 m"
-        "five c c2 m";
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 25% 25% 25% 25% ;
+        "ca cb cc cd cf"
+        "ca cb cc cd cf"
+        "ca cb cc cd cf"
+        "ca cb cc cd cf";
+
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 20% 20% 20% 20% 20%;
 }
-.Jack {
-    grid-column-start: c;
-    grid-row-start: one;
+img {
+    max-width: 20%;
 }
-.Queen {
-    grid-column-start: c2;
-    grid-row-start: one;
+p {
+    font-size: 30px;
 }
-.King {
-    grid-column-start: c;
-    grid-row-start: two;
-}
-.Ace {
-    grid-column-start: c2;
-    grid-row-start: two;
-}
-.PointsLabel {
-    grid-column-start: c;
-    grid-column-end: c2;
-    grid-row-start: four;
-    text-align: center;
-}
-h1 {
-    text-align: center;
-}
+/* /* .test {
+    background-color: gray;
+} */
