@@ -1,9 +1,9 @@
-export class Bidclass {
+export class Bid {
     public suit: string;
-    public number: number;
+    public number: string;
     public meaning: string;
 
-    constructor(suit: string, number: number, meaning: string) {
+    constructor(suit: string, number: string, meaning: string) {
         this.suit = suit;
         this.number = number;
         this.meaning = meaning;
@@ -11,8 +11,8 @@ export class Bidclass {
     getSuit(): string {
         return `${this.suit}`
     }
-    getNumber(): number {
-        return this.number
+    getNumber(): string {
+        return `${this.number}`
     }
     getMeaning(): string {
         return `${this.meaning}`

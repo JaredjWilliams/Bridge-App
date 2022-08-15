@@ -2,15 +2,20 @@
 <div  class="cardContainer">
     <ng-container *ngFor="let card of cards">
         <div>
-            <a routerLink="/bidscreen"><p>{{card.getNumber()}} <img src="{{card.getSuit()}}" alt=""></p></a>
+            <p id="test" (click)="getTotalPoints(card)">{{card.getNumber()}} <img src="{{card.getSuit()}}" alt=""></p>
         </div>
+        
     </ng-container>
 </div>
 <div>
-    <form>
-        <label for="">points</label>
-        <input type="number">
-    </form>
+    <ng-container>
+        <form>
+            <label for="">points</label>
+            <input type="number" value="{{totalPoints}}">
+            <a routerLink="/bidscreen"><button>Submit</button></a>
+        </form>
+    </ng-container>
+
 </div>
 
 

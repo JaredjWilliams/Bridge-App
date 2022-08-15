@@ -15,6 +15,10 @@ img {
 p {
     font-size: 30px;
 }
+
+#test:hover > p {
+    background-color: gray;
+}
 /* /* .test {
     background-color: gray;
 } */

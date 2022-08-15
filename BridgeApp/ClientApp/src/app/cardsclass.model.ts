@@ -1,4 +1,4 @@
-export class Cardsclass {
+export class Card {
     public suit: string;
     public number: string;
     public pointCount: number;
@@ -8,7 +8,6 @@ export class Cardsclass {
         this.number = number;
         this.pointCount = pointCount;
     }
-
     getSuit(): string {
         return `${this.suit}`
     }

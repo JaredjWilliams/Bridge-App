@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DistributionClass } from '../distribution-class.model';
+import { Distribution } from '../distribution-class.model';
 
 @Component({
   selector: 'app-distribution',
@@ -10,27 +10,22 @@ export class DistributionComponent implements OnInit {
 
   constructor() { }
   
-  spades = 0;
-  hearts = 0;
-  diamonds = 0;
-  clubs = 0;
+test() {
+  this.distributions.forEach(element => {
+    console.log(element.getSuitCount())
+  });
+}
 
-  increment() {
-    this.spades += 1
-    return this.spades;
-  }
-  decrement() {
-    this. spades-= 1;
-    return this.spades;
-  }
+
+
 
   ngOnInit(): void {
   }
 
-  distributions: DistributionClass[] = [
-    new DistributionClass(0, 'assets/spades.png'),
-    new DistributionClass(0, 'assets/hearts.png'),
-    new DistributionClass(0, 'assets/diamonds.png'),
-    new DistributionClass(0, 'assets/clubs.png')
+  distributions: Distribution[] = [
+    new Distribution(0, 'assets/spades.png'),
+    new Distribution(0, 'assets/hearts.png'),
+    new Distribution(0, 'assets/diamonds.png'),
+    new Distribution(0, 'assets/clubs.png')
   ]
 }

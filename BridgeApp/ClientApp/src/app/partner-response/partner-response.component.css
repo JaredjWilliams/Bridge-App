@@ -1,0 +1,12 @@
+.partnerResponseContainer {
+    display: grid;
+    grid-template-areas: 
+        "onec d h s nt";
+        text-align: center;
+}
+img {
+    max-width: 20%;
+}
+p {
+    font-size: 30px;
+}

@@ -1,4 +1,4 @@
-export class DistributionClass {
+export class Distribution {
     public suitCount: number;
     public suit: string;
 
@@ -14,6 +14,7 @@ export class DistributionClass {
     }
     incrementSuitCount(): number {
         this.suitCount++
+        console.log(this.suitCount + this.suit)
         return this.suitCount
     }
     decrementSuitCount(): number {
