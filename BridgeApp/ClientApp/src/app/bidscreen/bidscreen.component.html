@@ -1,3 +1,4 @@
+
 <div class="mainContainer">
     <nav class="subContainer">
         <a routerLink="/partner-response">
@@ -19,6 +20,14 @@
     <div class="subContainer4">
         <h1>Pass <img src="" alt=""></h1>
         <p>This bid indicates that you do not have opening count. (Read more here)</p>
-        <p (click)="test()">test</p>
+        <p (click)="test()"></p>
     </div>
+</div>
+
+<div>
+    <h2>Data from B: {{ data }} </h2> 
+    <input [(ngModel)] = 'data' /> 
+    <br>
+    <br>
+    <a [routerLink]="['/a']">Go to A</a>
 </div>

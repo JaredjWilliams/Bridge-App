@@ -2,13 +2,26 @@
     <h2>Enter the number of cards you have in each suit</h2>
         <ng-container *ngFor="let distribution of distributions">
            <p># of   <img src="{{distribution.suit}}" alt=""></p>
-           <input type="number" value="{{distribution.suitCount}}" min="0" max="13">
+           <input type="number" value="{{distribution.suitCount}}" min="0" max="13" [(ngModel)] = data />
            <button (click)="distribution.incrementSuitCount()">+</button>
            <button (click)="distribution.decrementSuitCount()">-</button>
         </ng-container>
-<button class="submitButton"><a routerLink="/points">Submit</a></button>
-<p (click)="test()">test</p>
+        <!-- if this doesnt work its because the data is being sent to points screen -->
+        <!-- Or because the getter and setter are set  -->
+<button class="submitButton"><a [routerLink]="['/points']">Submit</a></button>
+<p (click)="broadCastMessage()">test: {{arr}}</p>
+
 </div>
+
+<div>
+    <h2>Data from A: {{ data }} </h2> 
+    <input [(ngModel)] = data /> 
+    <br>
+    <br> 
+    <a [routerLink]="['/b']">Go to B</a>
+</div>
+
+
 
 
 

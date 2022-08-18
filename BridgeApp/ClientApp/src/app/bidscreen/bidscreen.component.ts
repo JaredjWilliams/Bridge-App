@@ -1,5 +1,7 @@
-import { Component, getNgModuleById, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Bid } from '../bidclass.model';
+import { CommonService } from '../common.service';
 import { Distribution } from '../distribution-class.model';
 
 @Component({
@@ -8,15 +10,21 @@ import { Distribution } from '../distribution-class.model';
   styleUrls: ['./bidscreen.component.css']
 })
 export class BidscreenComponent implements OnInit {
+ 
+  get data():string {
+    return this.commonService.serviceData; 
+  }
 
-  constructor() { }
+  set data(value: string) { 
+    this.commonService.serviceData = value; 
+  }
 
+  constructor(public commonService: CommonService) { } 
+  
   ngOnInit(): void {
   }
   test() {
-    this.distributions.forEach(element => {
-      console.log(element.getSuitCount())
-    });
+   
   }
   
   distributions: Distribution[] = [
@@ -64,3 +72,4 @@ export class BidscreenComponent implements OnInit {
     new Bid('NT', '7 NT', 'This bid indicates a point count of 15-17 points, even distribution, and is asking for the partners best suit.'),
   ]
 }
+

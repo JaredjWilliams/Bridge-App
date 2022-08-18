@@ -1,21 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { Distribution } from '../distribution-class.model';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { CommonService } from '../common.service';
 @Component({
   selector: 'app-distribution',
   templateUrl: './distribution.component.html',
   styleUrls: ['./distribution.component.css']
 })
 export class DistributionComponent implements OnInit {
-
-  constructor() { }
   
+  get data():string { 
+    return this.commonService.serviceData; 
+  } 
+  
+  set data(value: string) { 
+    this.commonService.serviceData = value; 
+  } 
+  
+  arr: number[] = [];
+
+  constructor(public commonService: CommonService) { }
+  
+  broadCastMessage(): void {
+    this.commonService.broadCastMessage('Message from Pointscreen Component to App Component!');
+  }
+
+  removeMessages(): void {
+    this.commonService.removeMessages();
+  }
+
 test() {
   this.distributions.forEach(element => {
-    console.log(element.getSuitCount())
-  });
+    this.arr.push(element.suitCount)
+  })
+  console.log(this.arr)
 }
-
 
 
 

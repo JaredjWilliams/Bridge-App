@@ -15,10 +15,13 @@ img {
 p {
     font-size: 30px;
 }
-
-#test:hover > p {
+.tenclubs {
     background-color: gray;
 }
-/* /* .test {
+.jackclubs {
     background-color: gray;
-} */
+}
+.test {
+    background-color: white;
+}
+

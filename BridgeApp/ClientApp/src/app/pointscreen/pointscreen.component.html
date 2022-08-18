@@ -1,8 +1,8 @@
 <h2>Select your face cards</h2>
 <div  class="cardContainer">
-    <ng-container *ngFor="let card of cards">
+    <ng-container *ngFor="let card of cards;">
         <div>
-            <p id="test" (click)="getTotalPoints(card)">{{card.getNumber()}} <img src="{{card.getSuit()}}" alt=""></p>
+            <p (click)="getTotalPoints(card)">{{card.getNumber()}} <img src="{{card.getSuit()}}" alt=""></p>
         </div>
         
     </ng-container>
@@ -15,7 +15,6 @@
             <a routerLink="/bidscreen"><button>Submit</button></a>
         </form>
     </ng-container>
-
 </div>
 
 
