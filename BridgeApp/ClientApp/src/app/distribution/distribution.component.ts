@@ -9,14 +9,38 @@ import { CommonService } from '../common.service';
 })
 export class DistributionComponent implements OnInit {
   
-  get data():string { 
-    return this.commonService.serviceData; 
+  get clubs():number { 
+    return this.commonService.clubs; 
   } 
   
-  set data(value: string) { 
-    this.commonService.serviceData = value; 
+  set clubs(value: number) { 
+    this.commonService.clubs = value; 
+  } 
+
+  get diamonds():number { 
+    return this.commonService.diamonds; 
   } 
   
+  set diamonds(value: number) { 
+    this.commonService.diamonds = value; 
+  } 
+
+  get hearts():number { 
+    return this.commonService.hearts; 
+  } 
+  
+  set hearts(value: number) { 
+    this.commonService.hearts = value; 
+  } 
+
+  get spades():number { 
+    return this.commonService.spades; 
+  } 
+  
+  set spades(value: number) { 
+    this.commonService.spades = value; 
+  } 
+
   arr: number[] = [];
 
   constructor(public commonService: CommonService) { }
@@ -29,12 +53,7 @@ export class DistributionComponent implements OnInit {
     this.commonService.removeMessages();
   }
 
-test() {
-  this.distributions.forEach(element => {
-    this.arr.push(element.suitCount)
-  })
-  console.log(this.arr)
-}
+
 
 
 

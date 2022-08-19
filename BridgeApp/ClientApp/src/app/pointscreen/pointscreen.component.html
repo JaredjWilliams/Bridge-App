@@ -2,19 +2,18 @@
 <div  class="cardContainer">
     <ng-container *ngFor="let card of cards;">
         <div>
-            <p (click)="getTotalPoints(card)">{{card.getNumber()}} <img src="{{card.getSuit()}}" alt=""></p>
+            <input type="checkbox" id="btnControl" (click)="getPoints(card)"> 
+            <label class="btn" for="btnControl">{{card.getNumber()}} <img src="{{card.getSuit()}}" alt=""></label>
         </div>
         
     </ng-container>
 </div>
+<br>
 <div>
-    <ng-container>
-        <form>
             <label for="">points</label>
-            <input type="number" value="{{totalPoints}}">
+            <input [(ngModel)]="totalPoints" type="number" value="{{totalPoints}}">
             <a routerLink="/bidscreen"><button>Submit</button></a>
-        </form>
-    </ng-container>
 </div>
+<p (click)="test()" >test</p>
 
 

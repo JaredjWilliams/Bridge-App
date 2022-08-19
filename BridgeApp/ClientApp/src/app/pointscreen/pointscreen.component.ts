@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Card } from '../cardsclass.model';
 import { ActivatedRoute } from '@angular/router';
 import { DistributionComponent } from '../distribution/distribution.component';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-pointscreen',
@@ -10,11 +11,33 @@ import { DistributionComponent } from '../distribution/distribution.component';
 })
 export class PointscreenComponent implements OnInit {
  
-  totalPoints = 0;
+  points = 0;
+  get totalPoints():number { 
+    return this.commonService.totalPoints; 
+  } 
 
-  getTotalPoints(card:Card) {
+  getPoints(card:Card) {
     this.totalPoints += card.getPointCount()
   }
+  
+  set totalPoints(value: number) { 
+    this.commonService.totalPoints = value; 
+  } 
+
+  test() {
+    console.log(this.totalPoints)
+  }
+
+  selectedIdx = 0;
+  selectedCard(index: number):void {
+    this.selectedIdx = index;
+  }
+
+  constructor(public commonService: CommonService) {
+
+  }
+  
+  
 
   ngOnInit(): void {
   }

@@ -6,7 +6,14 @@ import { Observable, Subject } from 'rxjs';
 })
 export class CommonService {
 
-  serviceData!: string;
+  clubs!: number;
+  diamonds!: number;
+  hearts!: number;
+  spades!: number;
+  totalPoints = 0;
+
+
+
   
   private subject = new Subject();
 

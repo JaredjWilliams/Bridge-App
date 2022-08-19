@@ -1,25 +1,46 @@
+
 <div class="gridContainer">
     <h2>Enter the number of cards you have in each suit</h2>
-        <ng-container *ngFor="let distribution of distributions">
+    
+        
+        <label class="clubs"># of <img src="assets/clubs.png"></label>
+        <input [(ngModel)]="clubs" class="clubinput" type="number" min="0" max="13"  placeholder="_">
+
+        <label for="diamondsNum" class="diamonds"># of <img src="assets/diamonds.png" alt=""></label>
+        <input [(ngModel)]="diamonds" class="diamondsinput" type="number" min="0" max="13" placeholder="_">
+    
+        <label class="hearts"># of <img src="assets/hearts.png"></label>
+        <input [(ngModel)]="hearts" class="heartsinput" type="number" min="0" max="13" placeholder="_" >
+
+        <label class="spades"># of <img src="assets/spades.png"></label>
+        <input [(ngModel)]="spades" class="spadesinput" type="number" min="0" max="13" placeholder="_">
+
+        <a class="submitButton" routerLink="/points"><button>Next</button></a>
+        
+
+    </div>
+        <!-- <ng-container *ngFor="let distribution of distributions">
            <p># of   <img src="{{distribution.suit}}" alt=""></p>
-           <input type="number" value="{{distribution.suitCount}}" min="0" max="13" [(ngModel)] = data />
-           <button (click)="distribution.incrementSuitCount()">+</button>
+           <input  min="0" max="13" [(ngModel)] = value />
+            <button (click)="distribution.incrementSuitCount()">+</button>
            <button (click)="distribution.decrementSuitCount()">-</button>
-        </ng-container>
+        </ng-container> -->
+        
         <!-- if this doesnt work its because the data is being sent to points screen -->
         <!-- Or because the getter and setter are set  -->
-<button class="submitButton"><a [routerLink]="['/points']">Submit</a></button>
-<p (click)="broadCastMessage()">test: {{arr}}</p>
+<!-- <button class="submitButton"><a [routerLink]="['/points']"> submit to bidscreen</a></button> -->
 
-</div>
 
-<div>
+
+<!-- </div>
+<h1 (click)="test()">test</h1> -->
+<!-- <div>
     <h2>Data from A: {{ data }} </h2> 
     <input [(ngModel)] = data /> 
     <br>
     <br> 
     <a [routerLink]="['/b']">Go to B</a>
-</div>
+</div> -->
 
 
 

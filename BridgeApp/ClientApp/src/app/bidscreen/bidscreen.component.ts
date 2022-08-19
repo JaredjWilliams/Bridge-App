@@ -11,20 +11,52 @@ import { Distribution } from '../distribution-class.model';
 })
 export class BidscreenComponent implements OnInit {
  
-  get data():string {
-    return this.commonService.serviceData; 
-  }
+  get clubs():number { 
+    return this.commonService.clubs; 
+  } 
+  
+  set clubs(value: number) { 
+    this.commonService.clubs = value; 
+  } 
 
-  set data(value: string) { 
-    this.commonService.serviceData = value; 
-  }
+  get diamonds():number { 
+    return this.commonService.diamonds; 
+  } 
+  
+  set diamonds(value: number) { 
+    this.commonService.diamonds = value; 
+  } 
+
+  get hearts():number { 
+    return this.commonService.hearts; 
+  } 
+  
+  set hearts(value: number) { 
+    this.commonService.hearts = value; 
+  } 
+
+  get spades():number { 
+    return this.commonService.spades; 
+  } 
+  
+  set spades(value: number) { 
+    this.commonService.spades = value; 
+  } 
+
+  get totalPoints():number { 
+    return this.commonService.totalPoints; 
+  } 
+  
+  set totalPoints(value: number) { 
+    this.commonService.totalPoints = value; 
+  } 
 
   constructor(public commonService: CommonService) { } 
   
   ngOnInit(): void {
   }
   test() {
-   
+   console.log(this.totalPoints)
   }
   
   distributions: Distribution[] = [
