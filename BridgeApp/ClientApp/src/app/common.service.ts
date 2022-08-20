@@ -11,6 +11,7 @@ export class CommonService {
   hearts!: number;
   spades!: number;
   totalPoints = 0;
+  arr: string [] = [];
 
 
 

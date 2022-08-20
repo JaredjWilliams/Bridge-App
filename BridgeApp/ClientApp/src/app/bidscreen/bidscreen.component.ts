@@ -51,12 +51,20 @@ export class BidscreenComponent implements OnInit {
     this.commonService.totalPoints = value; 
   } 
 
+  get arr(): string[] {
+    return this.commonService.arr
+  }
+
+  set arr(value: string[]) {
+    this.commonService.arr = value
+  }
+
   constructor(public commonService: CommonService) { } 
   
   ngOnInit(): void {
   }
   test() {
-   console.log(this.totalPoints)
+   console.log(this.arr)
   }
   
   distributions: Distribution[] = [

@@ -2,8 +2,8 @@
 <div  class="cardContainer">
     <ng-container *ngFor="let card of cards;">
         <div>
-            <input type="checkbox" id="btnControl" (click)="getPoints(card)"> 
-            <label class="btn" for="btnControl">{{card.getNumber()}} <img src="{{card.getSuit()}}" alt=""></label>
+            <input type="checkbox" id="btnControl" (click)="getPointsAndId(card)"> 
+            <label for="btnControl">{{card.getNumber()}} <img src="{{card.getSuit()}}" alt=""></label>
         </div>
         
     </ng-container>

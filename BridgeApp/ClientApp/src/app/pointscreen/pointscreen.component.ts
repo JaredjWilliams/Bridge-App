@@ -10,58 +10,72 @@ import { CommonService } from '../common.service';
   styleUrls: ['./pointscreen.component.css']
 })
 export class PointscreenComponent implements OnInit {
+
+  get arr(): string[] {
+    return this.commonService.arr
+  }
+
+  set arr(value: string[]) {
+    this.commonService.arr = value
+  }
  
-  points = 0;
   get totalPoints():number { 
     return this.commonService.totalPoints; 
   } 
-
-  getPoints(card:Card) {
-    this.totalPoints += card.getPointCount()
-  }
-  
+    
   set totalPoints(value: number) { 
     this.commonService.totalPoints = value; 
   } 
+
+  removeId(card: Card) {
+    let index = this.arr.findIndex(d => d === card.identifier);
+    this.arr.splice(index, 1)
+  }
+
+
+  getPointsAndId(card:Card) {
+    if (card.clicked === false) {
+      this.totalPoints += card.getPointCount()
+      this.arr.push(card.identifier);
+      console.log(this.arr);
+      card.clicked = true;
+    } else {
+      this.totalPoints -= card.getPointCount()
+      this.removeId(card);
+      console.log(this.arr);
+      card.clicked = false;
+    }
+  }
 
   test() {
     console.log(this.totalPoints)
   }
 
-  selectedIdx = 0;
-  selectedCard(index: number):void {
-    this.selectedIdx = index;
-  }
+  constructor(public commonService: CommonService) { }
 
-  constructor(public commonService: CommonService) {
+  ngOnInit(): void { }
 
-  }
-  
-  
-
-  ngOnInit(): void {
-  }
   cards: Card[] = [
-    new Card('assets/clubs.png', '10 ', 0, 'tenclubs'),
-    new Card('assets/clubs.png', 'J ', 1, 'jackclubs'),
-    new Card('assets/clubs.png', 'Q ', 2, 'queenclubs'),
-    new Card('assets/clubs.png', 'K ', 3, 'kingclubs'),
-    new Card('assets/clubs.png', 'A ', 4, 'aceclubs'),
-    new Card('assets/diamonds.png', '10 ', 0, 'tendiamonds'),
-    new Card('assets/diamonds.png', 'J ', 1, 'jackdiamonds'),
-    new Card('assets/diamonds.png', 'Q ', 2, 'queendiamonds'),
-    new Card('assets/diamonds.png', 'K ', 3, 'kingdiamonds'),
-    new Card('assets/diamonds.png', 'A ', 4, 'acediamonds'),
-    new Card('assets/hearts.png', '10 ', 0, 'tenhearts'),
-    new Card('assets/hearts.png', 'J ', 1, 'jackhearts'),
-    new Card('assets/hearts.png', 'Q ', 2, 'queenhearts'),
-    new Card('assets/hearts.png', 'K ', 3, 'kinghearts'),
-    new Card('assets/hearts.png', 'A ', 4, 'acehearts'),
-    new Card('assets/spades.png', '10 ',0, 'tenspades'),
-    new Card('assets/spades.png', 'J ', 1, 'jackspades'),
-    new Card('assets/spades.png', 'Q ', 2, 'queenspades'),
-    new Card('assets/spades.png', 'K ', 3, 'kingspades'),
-    new Card('assets/spades.png', 'A ', 4, 'acespades'),
+    new Card('assets/clubs.png', '10 ', 0, 'tenclubs', false),
+    new Card('assets/clubs.png', 'J ', 1, 'jackclubs', false),
+    new Card('assets/clubs.png', 'Q ', 2, 'queenclubs', false),
+    new Card('assets/clubs.png', 'K ', 3, 'kingclubs', false),
+    new Card('assets/clubs.png', 'A ', 4, 'aceclubs', false),
+    new Card('assets/diamonds.png', '10 ', 0, 'tendiamonds', false),
+    new Card('assets/diamonds.png', 'J ', 1, 'jackdiamonds', false),
+    new Card('assets/diamonds.png', 'Q ', 2, 'queendiamonds', false),
+    new Card('assets/diamonds.png', 'K ', 3, 'kingdiamonds', false),
+    new Card('assets/diamonds.png', 'A ', 4, 'acediamonds', false),
+    new Card('assets/hearts.png', '10 ', 0, 'tenhearts', false),
+    new Card('assets/hearts.png', 'J ', 1, 'jackhearts', false),
+    new Card('assets/hearts.png', 'Q ', 2, 'queenhearts', false),
+    new Card('assets/hearts.png', 'K ', 3, 'kinghearts', false),
+    new Card('assets/hearts.png', 'A ', 4, 'acehearts', false),
+    new Card('assets/spades.png', '10 ',0, 'tenspades', false),
+    new Card('assets/spades.png', 'J ', 1, 'jackspades', false),
+    new Card('assets/spades.png', 'Q ', 2, 'queenspades', false),
+    new Card('assets/spades.png', 'K ', 3, 'kingspades', false),
+    new Card('assets/spades.png', 'A ', 4, 'acespades', false),
   ]
 }
 function getPointCount() {

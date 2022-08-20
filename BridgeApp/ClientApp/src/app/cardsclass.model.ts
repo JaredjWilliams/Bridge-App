@@ -5,12 +5,15 @@ export class Card {
     public number: string;
     public pointCount: number;
     public identifier: string;
+    public clicked: boolean;
+    
 
-    constructor(suit: string, number: string, pointCount: number, identifier: string) {
+    constructor(suit: string, number: string, pointCount: number, identifier: string, clicked: boolean) {
         this.suit = suit;
         this.number = number;
         this.pointCount = pointCount;
         this.identifier = identifier;
+        this.clicked = clicked;
     }
     getSuit(): string {
         return `${this.suit}`
