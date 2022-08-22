@@ -41,7 +41,30 @@ export class DistributionComponent implements OnInit {
     this.commonService.spades = value; 
   } 
 
-  arr: number[] = [];
+  get arr(): number[] {
+    return this.commonService.arr
+  }
+  set arr(value: number[]) {
+    this.commonService.arr = value
+  }
+
+  getDistributionPoints() {
+    console.log(this.arr)
+    let distributionPoints = 0;
+    for (let i = 0; i < this.arr.length; i++) {
+      if (this.arr[i] === 2) {
+        distributionPoints++
+        console.log(distributionPoints)
+      } else if (this.arr[i] === 1) {
+        distributionPoints =+ 3
+        console.log(distributionPoints)
+      } else if (this.arr[i] === 0) {
+        distributionPoints =+ 5
+        console.log(distributionPoints)
+      }
+    }
+    return distributionPoints
+  }
 
   constructor(public commonService: CommonService) { }
   

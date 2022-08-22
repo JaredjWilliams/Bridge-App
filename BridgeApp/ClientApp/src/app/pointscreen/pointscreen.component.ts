@@ -11,12 +11,12 @@ import { CommonService } from '../common.service';
 })
 export class PointscreenComponent implements OnInit {
 
-  get arr(): string[] {
-    return this.commonService.arr
+  get identifierArr(): string[] {
+    return this.commonService.identifierArr
   }
 
-  set arr(value: string[]) {
-    this.commonService.arr = value
+  set identifierArr(value: string[]) {
+    this.commonService.identifierArr = value
   }
  
   get totalPoints():number { 
@@ -28,21 +28,21 @@ export class PointscreenComponent implements OnInit {
   } 
 
   removeId(card: Card) {
-    let index = this.arr.findIndex(d => d === card.identifier);
-    this.arr.splice(index, 1)
+    let index = this.identifierArr.findIndex(d => d === card.identifier);
+    this.identifierArr.splice(index, 1)
   }
 
 
   getPointsAndId(card:Card) {
     if (card.clicked === false) {
       this.totalPoints += card.getPointCount()
-      this.arr.push(card.identifier);
-      console.log(this.arr);
+      this.identifierArr.push(card.identifier);
+      console.log(this.identifierArr);
       card.clicked = true;
     } else {
       this.totalPoints -= card.getPointCount()
       this.removeId(card);
-      console.log(this.arr);
+      console.log(this.identifierArr);
       card.clicked = false;
     }
   }

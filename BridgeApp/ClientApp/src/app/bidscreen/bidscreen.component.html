@@ -1,27 +1,29 @@
 
 <div class="mainContainer">
-    <nav class="subContainer">
-        <a routerLink="/partner-response">
+    <ng-container *ngFor="let bid of shownBids">
             <div>
-                <h1>1 <img src="assets/clubs.png" alt=""></h1>
-                <p>This is a bid suitable for opening count (13 or greater). (Read more here)</p>
+                <a routerLink="/partner-response" (click)="chosenBid(bid)">
+                    <h1>{{bid.number}} <img src="{{bid.suit}}" alt=""></h1>
+                    <p>{{bid.meaning}}</p>
+                </a>
             </div>
-        </a>
-    </nav>
+    </ng-container>
+    <p (click)="test()">test</p>
 
-    <div class="subContainer2">
-        <h1>2 <img src="assets/diamonds.png" alt=""></h1>
-        <p>This is a bid suitable for opening count (13 points or greater). Also communicates that you have at least 4 diamonds. (read more here)</p>
+
+    <!-- <div class="subContainer2">
+        <h1>{{bidTwo.number}} <img src="{{bidTwo.suit}}" alt=""></h1>
+        <p>{{bidTwo.meaning}}</p>
     </div>
     <div class="subContainer3">
-        <h1>3 <img src="assets/hearts.png" alt=""></h1>
-        <p>This bid indicates high point count and at least 7 hearts. (Read more here)</p>
+        <h1>{{bidThree.number}} <img src="{{bidThree.suit}}" alt=""></h1>
+        <p>{{bidThree.meaning}}</p>
     </div>
     <div class="subContainer4">
-        <h1>Pass <img src="" alt=""></h1>
-        <p>This bid indicates that you do not have opening count. (Read more here)</p>
+        <h1>{{bidFour.number}} <img src="{{bidFour.suit}}" alt=""></h1>
+        <p>{{bidFour.meaning}}</p>
         <p (click)="test()">test</p>
-    </div>
+    </div> -->
 </div>
 
 <!-- <div>

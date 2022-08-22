@@ -1,7 +1,7 @@
 <h2>Partner Response</h2>
 <div class="partnerResponseContainer">
     <ng-container *ngFor="let bid of bids">
-        <a routerLink="/bidscreen"><p>{{bid.getNumber()}} <img src="{{bid.getSuit()}}" alt=""></p></a>
+        <a routerLink="/bidscreen"><p (click)="selectBid(bid)">{{bid.getNumber()}} <img src="{{bid.getSuit()}}" alt=""></p></a>
     </ng-container>
-    <p>passed</p>
+    <p (click)="test()">test</p>
 </div>

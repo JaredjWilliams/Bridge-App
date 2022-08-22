@@ -1,10 +1,10 @@
 .mainContainer {
     display:grid;
     grid-template-areas: 
-        "one c c2 m"
-        "two c c2 m";
+        "one c"
+        "two c";
         grid-template-rows: 1fr 1fr;
-        grid-template-columns: 2% 48% 48% 2%;
+        grid-template-columns: 50% 50%;
 }
 .subContainer {
     grid-column-start: c;
